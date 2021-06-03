@@ -42,6 +42,7 @@
     "test": "tsc && tape dist/test/*.js | tap-spec",
     "coveralls": "remap-istanbul -i coverage/coverage.json -t lcovonly | coveralls",
     "compile": "tsc",
-    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json --type-check"
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json --type-check",
+    "prepare": "tsc"
   }
 }

@@ -28,9 +28,9 @@ export function createClient(basename ?: string, options: AxiosRequestConfig = {
  * create HalResource for uri
  */
 export function createResource<T extends IHalResource>(
-  client: HalRestClient,
-  c: IHalResourceConstructor<T>,
-  uri?: string|URI,
+    client: HalRestClient,
+    c: IHalResourceConstructor<T>,
+    uri?: string | URI,
 ): T {
     if (!uri) {
         return new c(client);
@@ -49,7 +49,7 @@ export function createResource<T extends IHalResource>(
 
     const resource = resources[stringURI];
     if (resource instanceof c) {
-      return resource;
+        return resource;
     }
     return new c(resource);
 }

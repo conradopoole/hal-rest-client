@@ -21,10 +21,6 @@ export class URI {
     }
 
     public fill(params: object = {}): string {
-        if (this.templated && this.uriTemplates) {
-            return this.uriTemplates.fill(params);
-        } else {
-            return this.uri;
-        }
+        return this.templated && this.uriTemplates ? this.uriTemplates.fill(params) : this.uri;
     }
 }

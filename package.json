@@ -18,31 +18,33 @@
     "url": "http://github.com/deblockt/hal-rest-client/issues"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "reflect-metadata": "^0.1.9",
-    "uri-templates": "^0.1.9"
+    "axios": "1.2.2",
+    "reflect-metadata": "^0.1.13",
+    "uri-templates": "^0.2.0"
   },
   "main": "dist/index",
   "typings": "dist/index",
   "devDependencies": {
-    "@types/nock": "^8.2.0",
-    "@types/node": "^7.0.5",
-    "coveralls": "^2.11.16",
-    "istanbul": "^0.4.5",
-    "nock": "^9.0.5",
-    "remap-istanbul": "^0.9.1",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.6.3",
-    "tape-async": "^2.1.1",
-    "tslint": "^4.5.1",
-    "typescript": "^2.2.1"
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/eslint-plugin-tslint": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^8.31.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-unicorn": "^45.0.2",
+    "nock": "^13.3.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.6.1",
+    "tape-async": "^2.3.0",
+    "typescript": "^4.9.4"
   },
   "scripts": {
-    "coverage": "istanbul cover node_modules/tape/bin/tape dist/test/*.js; remap-istanbul -i coverage/coverage.json -o html-report -t html",
     "test": "tsc && tape dist/test/*.js | tap-spec",
-    "coveralls": "remap-istanbul -i coverage/coverage.json -t lcovonly | coveralls",
     "compile": "tsc",
-    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json --type-check",
+    "lint": "eslint -c .eslintrc.js --ext .ts src",
+    "lintfix": "eslint -c .eslintrc.js --fix --ext .ts src",
     "prepare": "tsc"
   }
 }
